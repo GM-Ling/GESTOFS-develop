@@ -1,0 +1,304 @@
+---
+layout: default
+---
+<html>
+<head>
+<title>GESTOFS-develop</title>
+<style type="text/css" media="all">
+            /* h1, h2, h3 and p are in Times New Roman font */
+            h1, h2, h3, p, li {
+                font-family: "Times New Roman";
+            }
+
+figcaption {
+  color: black;
+  font-family: "Times New Roman";
+  text-align: center;
+}
+ul.a {
+  list-style-type: circle;
+}
+
+ul.b {
+  list-style-type: square;
+}
+ol {
+    counter-reset: list;
+}
+ol > li {
+    list-style: none;
+}
+ol > li:before {
+    content: counter(list) ") ";
+    counter-increment: list;
+}
+</style>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-31LLQMY7HE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-31LLQMY7HE');
+</script>
+
+
+</head>
+<!-- The following is body -->
+<body>
+<h1 style="text-align:center">GESTOFS-develop</h1>
+<p>DISCLAIMER: This model is under experimental development. The results should not be used for navigational purposes or emergency planning under any circumstances.
+Please do not duplicate and use the result figures from this website without permission.</p>
+<!--<h2>NOTES</h2>
+<p>Due to the GFS(https://www.ncdc.noaa.gov/data-access/model-data/model-datasets/global-forcast-system-gfs) products stopped providing the latest reanalysis data, the AKSSFS is now interrupted, we apologise for the inconvenience‎.</p>-->
+<h2>UPDATES</h2>
+<ul class = "a">
+<li>Established on 07-11-2021: ND development version, 1 day nowcast and 5 day forecast for every day.</li>
+<li>Updated on 08-30-2021: Changed to do 7 day forecast, and forced 13km resolution 3 hourly GFS forecast data.</li>
+</ul>
+<!--<p>NOTES: The animations (5, 6, 7, 8) and the maximum surface elevation image (9) in this page are updated manually for the present, might not be updated every day, but it is in plan to set up updating automatically for the future.</p> -->
+
+<h2>NOTES</h2>
+<p>The forecast system runs once a day, the forecast animations are uploaded at 10:40, the water level figures are updated at 10:00, 12:15, 15:05, 18:05 for comparing with the latest observational data from NOAA stations. The time zone shown in the figures is in UTC. However, depending on the computer condition, the posted results might be delay.</p>
+
+<h2>1. GESTOFS v4.1.4</h2>
+<p>
+GESTOFS v4.1.4 model is the same global model used on <a href="https://cera.coastalrisk.live/" target="_blank">https://cera.coastalrisk.live</a>.
+Global finite element mesh: 8,452,486 nodes, 16,226,163 elements; compuational time step: 12s; 
+computational wallclock time: about 2h30min by using 240 cores for 5 day forecast.
+</p>
+<h2>2. GFS-FV3 wind speed (5 day forecast)</h2>
+<img src="gif/gl_wind_speed_5days.gif" alt="wind" class="inline"/>
+
+<h2>3. ADCIRC surface water elevation (5 day forecast)</h2>
+<p>Animation, 2 hourly output. The simulation result in the animation apply ADCIRC with ice parameterization.</p>
+<img src="gif/gl_eta_5days.gif" alt="eta" class="inline"/>
+
+<h2>4. Maximum ADCIRC surface elevation for the 5 day forecast period</h2>
+<p>Zoom in by clicking the following locations:</p>
+<p>・<a href="gif/MAXE_Guf_of_Alaska_0001.jpg" target="_blank">Gulf of Alaska</a>・<a href="gif/MAXE_Corpus_0001.jpg" target="_blank">Corpus Christi</a>・<a href="gif/MAXE_Port_Arthur_0001.jpg" target="_blank">Port Arthur</a>・<a href="gif/MAXE_Mississippi0001.jpg" target="_blank">Mississippi</a>・<a href="gif/MAXE_Mobile_0001.jpg" target="_blank">Mobile</a>・<a href="gif/MAXE_Florida_0001.jpg" target="_blank">Florida</a>・<a href="gif/MAXE_Savannah_0001.jpg" target="_blank">Savannah</a>・<a href="gif/MAXE_NewYork_0001.jpg" target="_blank">New York</a>・<a href="gif/MAXE_Boston_0001.jpg" target="_blank">Boston</a>・<a href="gif/MAXE_Hampshire_0001.jpg" target="_blank">New Hampshire</a>・<a href="gif/MAXE_Pacific_0001.jpg" target="_blank">Pacific islands</a></p>
+
+<img src="gif/MAXE_GL_0001.jpg" width="1100" alt="maxele" class="inline">
+
+
+<h2>5. ADCIRC surface water elevation compared to stations</h2>
+The forecast water level results are compared to the NOAA water level stations (green ones, <a href="https://tidesandcurrents.noaa.gov/stations.html?type=Water+Levels" target="_blank">https://tidesandcurrents.noaa.gov/stations.html?type=Water+Levels</a>) and the water sea level gauges with the TD UNESCO database (yellow ones, <a href="https://webcritech.jrc.ec.europa.eu/SeaLevelsDb/Home" target="_blank">https://webcritech.jrc.ec.europa.eu/SeaLevelsDb/Home</a>). In the figures, the black line indicates the observational data, the dash red line indicates the nowcast results of the past 5 days and the solid red line indicates the following 5 day forecast results. The 'adj=xxm' means the adjustment of the mean sea level for the model results, and it is computed by subtracting the mean model nowcast results from the mean observational values.
+<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1QQbCsG3c1PZbncxpT8yxqAr4g4u9LiGN" width="800" height="500"></iframe>
+
+<img src="images/8410140-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8411060-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8413320-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8418150-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8419317-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8443970-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8447386-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8447930-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8449130-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8452660-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8452944-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8454000-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8454049-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8461490-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8465705-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8467150-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8510560-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8516945-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8518750-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8519483-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8531680-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8534720-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8536110-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8537121-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8539094-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8540433-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8545240-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8548989-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8551762-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8551910-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8557380-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8570283-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8571421-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8571892-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8573364-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8573927-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8574680-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8575512-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8577330-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8594900-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8632200-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8635750-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8636580-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8637689-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8638610-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8639348-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8651370-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8652587-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8654467-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8656483-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8658120-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8658163-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8661070-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8662245-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8665530-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8670870-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8720030-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8720218-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8720357-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8721604-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8722670-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8723214-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8723970-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8724580-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8725110-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8725520-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8726384-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8726520-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8726607-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8726724-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8727520-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8728690-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8729108-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8729210-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8735180-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8735391-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8737048-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8747437-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8760721-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8760922-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8761305-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8761927-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8762075-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8764044-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8764227-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8770475-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8770520-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8770613-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8770777-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8770822-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8770971-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8771013-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8771341-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8771450-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8773037-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8773259-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8773701-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8774770-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8775237-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8775296-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8775792-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8775870-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8779748-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/8779770-GESTOFS_walv.png" alt="b1" class="inline"/>
+<!--<img src="images/9751364-GESTOFS_walv.png" alt="b1" class="inline"/>-->
+<img src="images/9751381-GESTOFS_walv.png" alt="b1" class="inline"/>
+<!--<img src="images/9751401-GESTOFS_walv.png" alt="b1" class="inline"/>-->
+<img src="images/9751639-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9752695-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9755371-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9757809-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9759110-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9759394-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9759938-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9410170-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9410230-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9410660-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9410840-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9411340-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9411406-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9412110-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9413450-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9414290-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9414523-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9414750-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9414863-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9415020-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9415102-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9415144-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9416841-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9418767-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9419750-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9431647-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9432780-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9435380-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9437540-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9439040-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9440569-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9440910-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9441102-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9442396-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9443090-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9444090-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9444900-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9446484-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9447130-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9449424-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9449880-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9450460-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9451054-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9451600-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9452210-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9452400-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9452634-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9453220-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9454050-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9454240-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9455090-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9455500-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9455760-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9455920-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9457292-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9457804-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9459450-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9461710-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9462450-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9462620-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9468756-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9491094-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9497645-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9468333-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/9464212-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/1611400-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/1612340-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/1612480-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/1615680-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/1617433-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/1617760-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/1619910-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/1634-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/1026-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/1014-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/2493-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/1814-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/1816-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/1653-GESTOFS_walv.png" alt="b1" class="inline"/>
+<img src="images/0853-GESTOFS_walv.png" alt="b1" class="inline"/>
+
+<h2>6. References </h2> 
+<p>
+<ol>
+  <li>W. Blier, S. Keefe, W.A. Shaffer and S.C. Kim: Storm Surges in the Region of Western Alaska, Monthly Weather Review, Vol.125, 1997.</li>
+  <li>R.S. Chapman, S.C. Kim and D.J. Mark: Storm-Induced Water Level Prediction Study for the Western Coast of Alaska, ERDC/CHL Letter Report, 2009.</li>
+  <li>ADCIRC: <a href="https://adcirc.org/" target="_blank">https://adcirc.org/</a>.</li>
+  <li>SWAN+ADCIRC: <a href="https://ccht.ccee.ncsu.edu/swanadcirc/" target="_blank">https://ccht.ccee.ncsu.edu/swanadcirc/</a>.</li>
+  <li>Brian R. Joyce, William J. Pringle, Damrongsak Wirasaet, Joannes J. Westerink, Andre J. Van der Westhuysen, Robert Grumbine, Jesse Feyenc: High resolution modeling of western Alaskan tides and storm surge under varying sea ice conditions, Ocean Modelling, Vol.141, 101421, 2019.</li>
+  <li>Christof Lüpkes, Vladimir M. Gryanik, Jörg Hartmann, and Edgar L Andreas: A parametrization, based on sea ice morphology, of the neutral atmospheric drag coefficients for weather prediction and climate models, Journal of Geophysical Research, Vol.117, D13112, 2012.</li>
+  <li>G. Ling, D. Wirasaet, J. Westerink, D. H. Richter, B. Joyce, W. Pringle, M. T. Contreras Vargas, K. R. Steffen, C. N. Dawson, A. Fujisaki-Manome, E. Myers, S. Moghimi, S. V. Vinogradov, A. Van der Westhuysen, A. Abdolali, and R. Grumbine: Studies on Parameterizations of Sea Ice Effect in a Storm Surge Model for Western Alaska, <p><a href="https://ams.confex.com/ams/2020Annual/webprogram/Paper370912.html" target="_blank">https://ams.confex.com/ams/2020Annual/webprogram/Paper370912.html</a>, AMS, 2020.</p></li>
+  <li>C.O. Collins and W.E. Rogers, A Source Term for Wave Attenuation by Sea ice in WAVEWATCH III ®: IC4, NRL Report NRL/MR/7320--17-9726, 2017.</li>
+  <li>M.H. Meylan, L.G. Bennette and A.L. Kohout: In situ measurements and analysis of ocean waves in the Antarcticmarginal ice zone, Geophysical Research Letters, Vol.41(14), pp. 5046–5051, 2014.</li>
+  <li>GLOCOFFS (GLObal Coastal Ocean Flood Forecasting System): <a href="https://wpringle.github.io/GLOCOFFS/" target="_blank">https://wpringle.github.io/GLOCOFFS/</a>.</li>
+</ol>
+</p>
+<h2>Acknowledgement</h2> 
+This work is being supported by National Oceanic and Atmospheric Administration (NOAA) for the Alaska Coastal Ocean Forecast System (ALCOFS) project.
+The author acknowledge Prof. Joannes J. Westerink, for the patient guidance, encouragement and advice, Dr. Damrongsak Wirasaet for a lot of ideas and help, 
+and thanks to the members of <a href="https://coast.nd.edu/index.html" target="_blank">Computational Hydraulics Laboratory</a> at the University of Notre Dame for fruitful discussions.
+</body>
+
+<!--<footer>
+  <p><a href="https://github.com/GM-Ling/GESTOFS-develop">AKSSFS</a> is maintained by: Guoming Ling</p>
+  <p>This page was generated by <a href="https://pages.github.com/">GitHub Pages</a>.</p>
+</footer>-->
+</html>
